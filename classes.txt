@@ -1,0 +1,82 @@
+class Table
+Data structure in the table
+
+dictionary, keys: numbers,
+values: list with 2 string members: field spec. piece e.g. A1, A2, A3
+missing: start fields, house
+
+
+class Player
+Data structure in player
+Start:
+int: how many is in the start field 0-4
+During the play:
+list: fields where the pieces stand on (0-4: int)
+
+House:
+dictionary: 4 places, on wich the pieces can stand
+
+class Game
+
+events:
+dice roll
+player steps
+
+step sequence, field empty? who is standing on it? steps in the house? forward, backward?
+no steps backward in the house
+
+
+
+to clarify later:
+loop of the table?
+loop of a player?
+max field Nr.?
+beginning of the house
+
+lépés menete:
+játékos következik
+-program kiírja, ki következik
+kockadobás
+-játkos jelzi, hogy dob (bead valamit)
+döntés, melyik bábuval lép
+-játékos beadja a bábujának a számát
+a lépés célmezőjének a meghatározása
+-program kiszámlja a célmezőt
+ellenőrzés, hogy áll-e ott valaki? (saját, nem lép, másik - leüt)
+-interakció: ha nem léphet, másik bábut kell választania. ha másik áll ott, akkor leüti.
+
+
+class Play részletek
+főmenü elemek:
+új játék
+mentett játék betöltése
+kilépés
+
+új játék: játékosok neve a betűhöz (színhez)
+
+játék (következő lépés)
+
+párbeszéd: következő játékos neve (színe, betűje)
+
+dobás indítása (space)
+dobás értéke
+tábla kiírása
+kérdés: melyik bábuval lép
+válasz
+vizsgálat: áll-e ott valaki? saját vagy másik.
+státusz: leüti, nem lehetséges
+ha nem lehetséges, másikat kér
+sikeres lépés
+új állás kiírása
+újra lépés
+
+lépés szekvencia:
+új lépés, ki a következő
+dobás parancs
+dobás eredmény
+
+ciklus
+bábu választása
+lépés vizsgálata
+eredmény / másik bábu választása
+
