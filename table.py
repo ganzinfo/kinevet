@@ -1,9 +1,12 @@
 # impementation of class Table
-# dictionary: kulcsok: S: start, F: mezők, H: házak
-# Kulcs: Startok kulcsai tuple ("S","A"), ("S","B")
-# Játékmezők kulcsai: tuple ("F","")
-# Ház kulcsai: tuple ("H","A")
-# start mezőben: integer 1-4
+# dictionary szintek
+# 1: 3 key-value: [S]:2 or 3 or 4 values, [F] 1-40 fields, [H] 2 or 3 or 4 houses
+# values: diectionaries:
+# [S]: keys:[A]...[D], values: int count of pieces in start per player
+# [F]: keys:[1]...[40], values:  tuple:(piece on field: 'A3', special properti of field, True-Fals or int 0,1,2 etc.)
+# [H]: keys: [A]...[D], values: tuple: (piece on field: 3)
+
+
 import _global
 
 
@@ -18,7 +21,7 @@ class Table:
     # self.tablePrintout()
 
     def create_table(self):
-        # _global.table
+        #
         for i in range(_global.playercount):
             key = ("S", chr(i + 65))
             _global.table[key] = [4, 0]
@@ -105,3 +108,6 @@ class Table:
                         targetKey = ('S', player)
                         # print(_global.table[targetKey][0])
                         _global.table[targetKey][0] -= 1
+
+    def checkWinner(self):
+        pass

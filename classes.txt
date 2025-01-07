@@ -1,11 +1,22 @@
 Új verzió:
 
-class Table:
+class Table adatszerkezet:
 dictionary:
 Start mezők:
 a bábuk száma ('S', 'A'): [4, 0], ('S', 'B'): [4, 0], ('S', 'C'): [4, 0]
 key: tuple, 'S', 'A' start, játékos betűje
-value: list, 0. index a darabszám, listnek nem lehet 1 eleme.
+value: list, 0. index a darabszám a start mezőben.
+
+Játék mezők
+('F', 0): ('', 0, 0), ('F', 1): ('', 0, 0), ('F', 2): ('', 0, 0)
+F=field (Play)
+0=field nr.
+'':player and piece nr. A3
+0: special property of field: knock off not possible (True / False?)
+
+Ház mezők
+('H', 'A', 1): ('', 0)
+A player 1. piece. clarify later.
 
 class Table
 Data structure in the table
