@@ -8,21 +8,23 @@ _global.playercount = 3
 # player1 = Player("A")
 # player1.playerPrintout()
 
-players = {}
-for i in range(_global.playercount):
-	players[chr(i + 65)]=(Player(chr(i + 65)))
-print(players["A"])
-print(players["B"])
-print(players["C"])
-print(players["A"].playerPrintout())
-print(players["B"].playerPrintout())
-print(players["C"].playerPrintout())
+# players = {}
+# for i in range(_global.playercount):
+# 	players[chr(i + 65)]=(Player(chr(i + 65)))
+# print(players["A"])
+# print(players["B"])
+# print(players["C"])
+# print(players["A"].playerPrintout())
+# print(players["B"].playerPrintout())
+# print(players["C"].playerPrintout())
 
 # table szakasz
-# table1 = Table()
+table1 = Table()
 # table1.tablePrintout()
-# # #table1.fullPrintout()
+table1.fullPrintout()
 # table1.movePiece("A",1,6)
+# table1.movePiece("A",2,5)
+# table1.movePiece("A",3,4)
 # # # table1.movePiece("A",1,4)
 # # # table1.movePiece("A",1,2)
 # # table1.movePiece("A",1,1)

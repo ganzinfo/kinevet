@@ -1,3 +1,12 @@
+Új verzió:
+
+class Table:
+dictionary:
+Start mezők:
+a bábuk száma ('S', 'A'): [4, 0], ('S', 'B'): [4, 0], ('S', 'C'): [4, 0]
+key: tuple, 'S', 'A' start, játékos betűje
+value: list, 0. index a darabszám, listnek nem lehet 1 eleme.
+
 class Table
 Data structure in the table
 
