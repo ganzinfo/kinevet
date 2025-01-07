@@ -3,7 +3,7 @@
 # 1: 3 key-value: [S]:2 or 3 or 4 values, [F] 1-40 fields, [H] 2 or 3 or 4 houses
 # values: diectionaries:
 # [S]: keys:[A]...[D], values: int count of pieces in start per player
-# [F]: keys:[1]...[40], values:  tuple:(piece on field: 'A3', special properti of field, True-Fals or int 0,1,2 etc.)
+# [F]: keys:[1]...[40], values:  tuple:(piece on field: 'A3', special property of field, True-False or int 0,1,2 etc.)
 # [H]: keys: [A]...[D], values: tuple: (piece on field: 3)
 
 
@@ -21,20 +21,21 @@ class Table:
     # self.tablePrintout()
 
     def create_table(self):
-        #
-        for i in range(_global.playercount):
-            key = ("S", chr(i + 65))
-            _global.table[key] = [4, 0]
-        for i in range(40):
-            key = ("F", i)
-            _global.table[key] = ("", 0, 0)
-        # 	#value tuple: jatekos betuje, szama
-        for i in range(_global.playercount):
-            for j in range(4):
-                key = ("H", chr(i + 65), j + 1)
-                _global.table[key] = ("", 0)
+        keyS = {}
+        keyF = {}
+        keyH = {}
 
-    # #print(g_table)
+        for i in range(_global.playercount):
+            keyH_P = {}
+            keyS[chr(i + 65)] = 4  # A-D, acc. to count players
+            for j in range(4):
+                keyH_P[j+1] = (False,)
+            keyH[chr(i + 65)] = keyH_P
+        _global.table["S"] = keyS
+        for i in range(40):
+            keyF[i+1]= ('',0)
+        _global.table["F"] = keyF
+        _global.table["H"] = keyH
 
     def tablePrintout(self):
         count = 0
@@ -78,7 +79,7 @@ class Table:
         print(printout)
 
     def fullPrintout(self):
-        print(_global.table)
+        print(_global.table["S"],"\n",_global.table["F"],"\n",_global.table["H"])
 
     def movePiece(self, player, piece, places):
         # a startból indulás itt valósul meg, nem a for - case-ben. 0-s bábuval lépés.
