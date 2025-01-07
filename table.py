@@ -29,11 +29,11 @@ class Table:
             keyH_P = {}
             keyS[chr(i + 65)] = 4  # A-D, acc. to count players
             for j in range(4):
-                keyH_P[j+1] = (False,)
+                keyH_P[j + 1] = (False,)
             keyH[chr(i + 65)] = keyH_P
         _global.table["S"] = keyS
         for i in range(40):
-            keyF[i+1]= ('',0)
+            keyF[i + 1] = ('', 0)
         _global.table["F"] = keyF
         _global.table["H"] = keyH
 
@@ -79,36 +79,17 @@ class Table:
         print(printout)
 
     def fullPrintout(self):
-        print(_global.table["S"],"\n",_global.table["F"],"\n",_global.table["H"])
+        print(_global.table["S"], "\n", _global.table["F"], "\n", _global.table["H"])
 
     def movePiece(self, player, piece, places):
-        # a startból indulás itt valósul meg, nem a for - case-ben. 0-s bábuval lépés.
-        # start = ()
-        for key in _global.table:
-            match key[0]:
-                case "F":
-                    if _global.table[key][0] == player + str(piece):
-                        print("found", (player + str(piece)))
-                        # start = key[0]+str(key[1])
-                        pass
-                case "H":
-                    if _global.table[key][0] == player + str(piece):
-                        pass
-
-                case _:
-                    # A babu a startban van
-                    if player == key[1]:
-                        # ezt az egészet egy függvénybe???
-                        targetKey = ('F', places)
-                        # ('',0,0)
-                        # print(_global.table[key])
-                        newTuple = (player + str(piece), _global.table[targetKey][1], _global.table[targetKey][2])
-                        _global.table[targetKey] = newTuple
-
-                        # startból kivonni egyet
-                        targetKey = ('S', player)
-                        # print(_global.table[targetKey][0])
-                        _global.table[targetKey][0] -= 1
-
-    def checkWinner(self):
         pass
+
+    def ucoordToTable(self, userPos, player):  # User coordinate convert to table coordinate
+        return (userPos + (ord(player) - 65) * 10) % 40
+
+    def tcoordToUser(self, tablePos, player):  # Table coordinate convert to user coordinate
+        return (tablePos - (ord(player) - 65) * 10) % 40
+
+    def checkWinner(self, player):
+        return _global.table["H"][player][1][0] and _global.table["H"][player][2][0] and _global.table["H"][player][3][
+            0] and _global.table["H"][player][4][0]

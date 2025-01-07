@@ -1,3 +1,22 @@
+rebase1
+lépés folyamata:
+
+főprogram:
+dobás megvan
+játékos bábut választ
+
+lépési szándék játékos koord-val a táblára megy  / koordináta egy getter függvénnyel a playerből
+
+táblán:
+átszámol player koord-ból table koord-ba.
+lépés vizsgálata:
+hova jön ki:
+ház? szabad egy ház mező?
+A ház mezőit a játékosnál a 40 után kell fűzni.
+
+
+
+
 Game class példányosítás -> főprogram
 főmenü -> új játék
 játékosok A,B,C,D neveit bekérni
