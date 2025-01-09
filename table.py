@@ -29,7 +29,7 @@ class Table:
             keyH_P = {}
             keyS[chr(i + 65)] = 4  # A-D, acc. to count players
             for j in range(4):
-                keyH_P[j + 1] = (False,)
+                keyH_P[j + 1] = (0,)
             keyH[chr(i + 65)] = keyH_P
         _global.table["S"] = keyS
         for i in range(40):
@@ -38,49 +38,57 @@ class Table:
         _global.table["H"] = keyH
 
     def tablePrintout(self):
+        printout = "State of table\n"
+        printout += "Startfields:\n"
+        for key in _global.table["S"]:
+            printout += "("
+            printout += key
+            printout += ":"
+            printout += str(_global.table["S"][key])
+            printout += ")"
+        printout += "\nGamefields:\n"
         count = 0
-        printout = "A tábla:\n"
-        for key in _global.table:
-            match key[0]:
-                case "S":
-                    printout += "("
-                    printout += key[0]
-                    printout += key[1]
-                    printout += ":"
-                    printout += str(_global.table[key][0])
-                    printout += ")"
-                case "F":
-                    printout += "("
-                    printout += key[0]
-                    printout += str(key[1])
-                    printout += ":"
-                    printout += str(_global.table[key][0])
-                    # printout += str(_global.table[key][1])
-                    printout += ")"
-                case "H":
-                    printout += "("
-                    printout += key[0]
-                    printout += key[1]
-                    printout += str(key[2])
-                    printout += ":"
-                    printout += str(_global.table[key][0])
-                    printout += ")"
-            count += 1
-            # soremelesek beszurasa kiiras formazahoz
-            limit = _global.playercount + 40
-            if count == _global.playercount:
-                printout += "\n\n"
-            if count > _global.playercount and count < limit and (count - _global.playercount) % 5 == 0:
+        for key in _global.table["F"]:
+            count +=1
+            printout += "("
+            printout += str(key)
+            printout += ":"
+            printout += str(_global.table["F"][key][0])
+            printout += ")"
+            if count % 5 == 0:
                 printout += "\n"
-            if count == limit:
-                printout += "\n\n"
-            if count > limit and (count - limit) % 4 == 0:
-                printout += "\n"
+        printout += "House fields:\n"
+        for key in _global.table["H"]:
+            printout += key
+            printout += ":"
+            printout += "("
+            for key2 in _global.table["H"][key]:
+                printout += str(_global.table["H"][key][key2][0])
+                printout += ","
+            printout += "\b)"
+
+
+
+
+
+
+
+        #     count += 1
+        #     # soremelesek beszurasa kiiras formazahoz
+        #     limit = _global.playercount + 40
+        #     if count == _global.playercount:
+        #         printout += "\n\n"
+        #     if count > _global.playercount and count < limit and (count - _global.playercount) % 5 == 0:
+        #         printout += "\n"
+        #     if count == limit:
+        #         printout += "\n\n"
+        #     if count > limit and (count - limit) % 4 == 0:
+        #         printout += "\n"
         print(printout)
 
     def fullPrintout(self):
-        print(_global.table["S"], "\n", _global.table["F"], "\n", _global.table["H"])
-
+        #print(_global.table["S"], "\n", _global.table["F"], "\n", _global.table["H"])
+        print(_global.table)
     def movePiece(self, player, piece, places):
         pass
 

@@ -31,20 +31,24 @@ print("Initializing...")
 # playerek létrehozása _global
 for i in range(_global.playercount):
 	_global.players[chr(i + 65)]=(Player(chr(i + 65)))
-table = Table()
-table.tablePrintout()
-for i in range(_global.playercount):
-	print(_global.players[chr(i + 65)])
-
-
+# print(_global.players)
+print(_global.players["A"].player)
+print(_global.players["B"].player)
+print(_global.players["C"].player)
+print(_global.players["D"].player)
 sys.exit()
+
+table = Table()
+# table.fullPrintout()
+table.tablePrintout()
+
+
+
 
 # player1 = Player("A")
 #
 
-# # print(players["A"])
-# # print(players["B"])
-# # print(players["C"])
+
 print(players["A"].playerPrintout())
 print(players["B"].playerPrintout())
 print(players["C"].playerPrintout())
