@@ -1,4 +1,6 @@
 # modul for global variables
+from main import players
 
-playercount = 3
+playercount = 0
 table = {}
+players = {}

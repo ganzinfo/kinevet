@@ -1,0 +1,17 @@
+main
+
+
+
+
+class Table
+someone has won OK
+
+
+
+
+
+
+
+class Player
+user coords to table OK
+table coords to user OK

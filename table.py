@@ -84,11 +84,7 @@ class Table:
     def movePiece(self, player, piece, places):
         pass
 
-    def ucoordToTable(self, userPos, player):  # User coordinate convert to table coordinate
-        return (userPos + (ord(player) - 65) * 10) % 40
 
-    def tcoordToUser(self, tablePos, player):  # Table coordinate convert to user coordinate
-        return (tablePos - (ord(player) - 65) * 10) % 40
 
     def checkWinner(self, player):
         return _global.table["H"][player][1][0] and _global.table["H"][player][2][0] and _global.table["H"][player][3][
