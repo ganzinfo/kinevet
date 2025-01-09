@@ -1,5 +1,6 @@
 import sys
 
+
 import _global
 #from player import Player
 from table import Table
