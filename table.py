@@ -46,7 +46,7 @@ class Table:
             printout += ":"
             printout += str(_global.table["S"][key])
             printout += ")"
-        printout += "\nGamefields:\n"
+        printout += "\nPlayfields:\n"
         count = 0
         for key in _global.table["F"]:
             count +=1

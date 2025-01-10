@@ -7,6 +7,7 @@ class Player:
     def __init__(self, symbol) -> None:
         self.player = {}
         self.pieces = {}
+        self.name = ""
         for i in range(4):
             self.pieces[i+1]= (True,0,0)
         self.player[symbol] = self.pieces
