@@ -1,4 +1,45 @@
-Új verzió:
+V3:
+
+Egységes class-ok
+
+start fields:
+hány bábu áll rajta, int.
+tuple(4,)
+
+Játékmező, loop fields, common:
+Játékos bábuja áll rajta A 2
+Speciáls mező tulajdonság: Kezdő mező, nem lehet ütni, esetleg további kezdő mezők.
+tuple('A',2,X) A speciális tulajdonság még tisztázatlan
+dictionary {1-40} tuple (A,3,X)
+
+Játékmezők, játékosonként??
+
+A játékos saját körét leképezni
+1-40 - H1-H4
+11-10 -
+21-20
+31-30
+
+Egy -egy függvény számolja oda-vissza
+
+
+house fields
+melyik mezőn melyik bábu áll
+dictionary {1,2,3,4} tuple (1,)
+
+
+
+
+
+
+
+
+
+
+
+
+
+V2:
 
 class Table adatszerkezet:
 dictionary:

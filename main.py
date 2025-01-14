@@ -23,6 +23,26 @@ def inputPlayercount() -> None:
 				print("Quit game... Bye.")
 				sys.exit()
 
+def keyboardInput(keys: tuple) -> str:
+	""" Wait for keyboard input (1 stroke). Returns either one of arguments, or with 'q' quits the game.
+	:param keys: tuple, the keys to check
+	:return: string, key found
+	q: quit game
+	"""
+	while True:
+		key_event = keyboard.read_event()
+		if key_event.event_type == keyboard.KEY_UP and key_event.name == 'q':
+			answer = input ("\bDo you really want to quit game? (y/n and enter)")
+			if answer == "y":
+				print("\bQuit game... Bye.")
+				sys.exit()
+		else:
+			for key in keys:
+				if key_event.event_type == keyboard.KEY_UP and key_event.name == key:
+					key_event = None
+					returnKey = key_event.name
+					break
+	return returnKey
 #start
 print("\tWelcome to Ludo game.\n\tHow many players will play?")
 # Number of players:

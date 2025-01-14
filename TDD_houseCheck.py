@@ -22,7 +22,7 @@ def houseCheck(fieldBefore, diceRoll, testHouseFields):
 
 # main:
 startField = 39
-diceRoll =  6
+diceRoll =  0
 testHouseFields = (0, 2, 0, 3)
 
 print(houseCheck(startField, diceRoll, testHouseFields))
