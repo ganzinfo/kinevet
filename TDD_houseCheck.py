@@ -3,7 +3,7 @@ def houseCheck(fieldBefore, diceRoll, testHouseFields):
     #   0 ha nem ért be
     targetField = -1  # only for testing
     maxTarget = fieldBefore + diceRoll
-    lastPossible = 0
+    lastPossible = -1
     condition = True
     checkedField = 41
     while (condition):
