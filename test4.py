@@ -41,17 +41,17 @@ def houseFilling():
 
 
 
-for i in range(40):
-    loop[i+1] = ("_",0,0)
+    for i in range(40):
+        loop[i+1] = ("_",0,0)
 
-# loopPrint()
+    # loopPrint()
 
-startFields = {}
+    startFields = {}
 
-startFields['A']=1
-startFields['B']=11
-startFields['C']=21
-startFields['D']=31
+    startFields['A']=1
+    startFields['B']=11
+    startFields['C']=21
+    startFields['D']=31
 
-for i in range(4):
-    playerLoop(chr(65+i))
+    for i in range(4):
+        playerLoop(chr(65+i))

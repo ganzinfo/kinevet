@@ -1,4 +1,11 @@
-main
+Hogy lehetne dokumentálni az ötleteket és a megoldásokat, hogy 1-2-3 hét után is emlékezzek rá, fel tudjam idézni, hogy mire gondoltam?
+Clean code elvek szerint a kódnak kellene dokumentálnia magát. A vátozók nevének, a metódusok nevének, stb.
+
+main (maga a játék)
+
+Metódusok:
+játékos lép és vele kapcsolatban
+
 
 
 

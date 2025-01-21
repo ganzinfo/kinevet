@@ -97,3 +97,8 @@ class Table:
     def checkWinner(self, player):
         return _global.table["H"][player][1][0] and _global.table["H"][player][2][0] and _global.table["H"][player][3][
             0] and _global.table["H"][player][4][0]
+
+#testing
+table = Table()
+
+table.fullPrintout()
