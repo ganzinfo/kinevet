@@ -1,10 +1,7 @@
-# 1 elemű lista
-# OK
+class testclass:
+    def spam(foo):
+        print(type(foo), foo)
 
-lista = []
 
-lista.append(1)
-
-lista[0] += 1
-
-print(lista)
+eggs = (1, 2, 3)
+testclass.spam(eggs)
