@@ -2,5 +2,5 @@
 
 
 playercount = 0
-table = {}
-players = {}
+# table = {}
+# players = {}

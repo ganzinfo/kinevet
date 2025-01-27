@@ -1,6 +1,6 @@
 import random
 import sys
-import keyboard
+#import keyboard
 import _global
 from table import Table
 from player import Player
