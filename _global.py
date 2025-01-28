@@ -1,6 +1,6 @@
 # modul for global variables
 
 
-playercount = 0
+playercount = 3
 # table = {}
 # players = {}
