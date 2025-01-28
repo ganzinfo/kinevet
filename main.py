@@ -5,10 +5,6 @@ import _global
 from table import Table
 from player import Player
 
-
-
-
-
 def inputPlayercount() -> None:
 	playercountOk = False
 	while not playercountOk:
