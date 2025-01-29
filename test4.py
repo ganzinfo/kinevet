@@ -19,13 +19,13 @@ def loopPrint():
 
     print(printout)
 
-def playerLoop(player):
+def playerLoop():
     """A játékosok saját köre a tábla koordinátarendszerében, házzal együtt.
     Ezen csak végig kell mennie.
     A házban a szabály alapján speciális a viselkedés.
     """
     for i in range (40):
-        start = startFields[player]
+        # start = startFields[player]
         print (i,"  ",(40 + start-1 + i ) % 40+1)
     for j in range(4):
         j += 1
@@ -53,5 +53,5 @@ def houseFilling():
     startFields['C']=21
     startFields['D']=31
 
-    for i in range(4):
-        playerLoop(chr(65+i))
+for i in range(4):
+    playerLoop()

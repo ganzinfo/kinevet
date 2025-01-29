@@ -1,5 +1,5 @@
 from table import Table
-from player import Player
+from players import Player
 
 
 def knockOffPiece(playerPiece, diceRoll)-> bool:

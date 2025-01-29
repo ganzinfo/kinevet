@@ -19,7 +19,6 @@ class Table:
         # print("Table instantiated")
         # tabla letrehozasa
         # global g_table
-        self.playercount = 3
         self.table = {}
         self.create_table()
 
@@ -31,7 +30,7 @@ class Table:
         keyF = {}
         keyH = {}
 
-        for i in range(self.playercount):
+        for i in range(_global.playercount):
             keyH_P = {}
             keyS[chr(i + 65)] = 4  # A-D, acc. to count players
             for j in range(4):
@@ -72,39 +71,22 @@ class Table:
                 printout += str(self.table["H"][key][key2][0])
                 printout += ","
             printout += "\b)"
-
-
-
-
-
-
-
-        #     count += 1
-        #     # soremelesek beszurasa kiiras formazahoz
-        #     limit = self.playercount + 40
-        #     if count == self.playercount:
-        #         printout += "\n\n"
-        #     if count > self.playercount and count < limit and (count - self.playercount) % 5 == 0:
-        #         printout += "\n"
-        #     if count == limit:
-        #         printout += "\n\n"
-        #     if count > limit and (count - limit) % 4 == 0:
-        #         printout += "\n"
         print(printout)
 
     def fullPrintout(self):
         #print(self.table["S"], "\n", self.table["F"], "\n", self.table["H"])
         print(self.table)
+
     def movePiece(self, player, piece, places):
         pass
 
 
 
-    def checkWinner(self, player):
-        return self.table["H"][player][1][0] and self.table["H"][player][2][0] and self.table["H"][player][3][0] and self.table["H"][player][4][0]
+
 
 #testing
-# table = Table()
+table = Table()
 #
 # table.tablePrintout()
-# table.fullPrintout()
+table.fullPrintout()
+table.fullPrintout()
