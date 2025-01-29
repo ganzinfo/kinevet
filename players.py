@@ -14,6 +14,10 @@ class Players:
                       (self.players[chr(i + 65)].pieces['p' + str(j + 1)].piece['F']),
                       (self.players[chr(i + 65)].pieces['p' + str(j + 1)].piece['H']))
 
+    def fullPrintout(self):
+        # print(self.players['B'].pieces['p1'].piece)
+        print(self.players)
+
 
 class Player:
     def __init__(self, offset):
@@ -34,45 +38,28 @@ class Player:
     def tableCoordsOnOwnCs(self, playerField):
         return self.tableCoordOnOwnCs(playerField)
 
-    def playerMoves(self, piece, count):
-        # players.players['A'].pieces['p3'].piece['H']
-        target = self.pieces[piece].piece['F'] + count
-        if target > 40:
-            pass# this.checkHouseFilling(target) #returns 1-4 for possible housefield or 0 if
+    # def playerMoves(self, piece, count):
+    #     # players.players['A'].pieces['p3'].piece['H']
+    #     target = self.pieces[piece].piece['F'] + count
+    #     if target > 40:
+    #         pass# this.checkHouseFilling(target) #returns 1-4 for possible housefield or 0 if
+    #
+    #         print(self.houseFilling(target))
+    #     else:
+    #         self.pieces[piece].piece['F'] = target
 
-            print(self.houseFilling(target))
-        else:
-            self.pieces[piece].piece['F'] = target
-
-    def playerWon(self):
+    def checkPlayerWon(self):
         playerWon = True
         for i in range(4):
             if self.pieces['p' + str(i + 1)].piece['H'] == 0:
                 playerWon = False
         return playerWon
 
-#house filling comes into table
+    def checkPieceInStart(self, piece) -> bool:
+        return self.pieces[piece].piece['S']
 
-    # def houseFilling(self,target):
-    #     #   1,2,3,4 ha valamelyikre léphet
-    #     #   0 ha nem talél a lépéssel üres mezőt
-    #     # a ház mezők végignézése
-    #     # for i in range(4):
-    #     #     if self.pieces['p' + str(i + 1)].piece['H'] == 0:
-    #
-    #
-    #     # targetField = -1  # only for testing
-    #     # maxTarget = fieldBefore + diceRoll
-    #     lastPossible = 0
-    #     condition = True
-    #     checkedField = 1
-    #     while (condition):
-    #         if checkedField > 4:
-    #             condition = False
-    #         elif self.pieces['p' + str(checkedField)].piece['H'] == 0:
-    #             lastPossible = checkedField
-    #             checkedField += 1
-    #     return lastPossible
+    def startPiece(self, count):
+        pass
 
 class Pieces:
     def __init__(self):
@@ -96,10 +83,11 @@ players.players['A'].pieces['p3'].piece['F'] = 38
 # players.players['A'].pieces['p2'].piece['H'] = 2
 # players.players['A'].pieces['p3'].piece['H'] = 3
 # players.players['A'].pieces['p4'].piece['H']= 4
-players.playersPrintout()
+# players.playersPrintout()
 
-print(players.players['A'].playerWon())
-players.players['A'].playerMoves('p3',3)
+# print(players.players['A'].playerWon())
+# move a table class-ban és csak az eredmény jön át ide
+# players.players['A'].playerMoves('p3',3)
 
 # players.playersPrintout()
-# print(players)
+players.fullPrintout()
