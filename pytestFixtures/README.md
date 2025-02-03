@@ -1,0 +1,1 @@
+### Ez a négy file a 2. 17-i dolgozat anyagát képezi.
