@@ -1,0 +1,21 @@
+#két file, tesztfüggvények
+test függvény file:
+-------------------------------------------
+
+def test_function1(fixture1):
+    #ez a teszt függvény        2.
+
+def test_function2(fixture1):
+    #ez a teszt függvény        2.
+
+
+conftest file
+-------------------------------------------
+import pytest
+
+@pytest.mark.fixture()
+def fixture1():
+    #ez a fixture
+    <előtte lévő utastások>     1.
+    yield
+    <utána lévő utasítások>      3.
