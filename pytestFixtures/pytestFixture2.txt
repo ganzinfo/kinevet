@@ -6,7 +6,7 @@ def test_function1(fixture1):
     #ez a teszt függvény        2.
 
 def test_function2(fixture1):
-    #ez a teszt függvény        2.
+    #ez a teszt függvény        5.
 
 
 conftest file
@@ -16,6 +16,6 @@ import pytest
 @pytest.mark.fixture()
 def fixture1():
     #ez a fixture
-    <előtte lévő utastások>     1.
+    <előtte lévő utastások>     1. 4.
     yield
-    <utána lévő utasítások>      3.
+    <utána lévő utasítások>      3. 6.
