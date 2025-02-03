@@ -1,0 +1,25 @@
+#két file, tesztfüggvények classban, fixture minden tesztfüggvény előtt
+test függvény file:
+-------------------------------------------
+import pytest
+
+@pytest.mark.usefixtures("fixture")
+class testclass:
+
+    def test_function1(self):
+        #ez a teszt függvény        2.
+
+    def test_function2(self):
+        #ez a teszt függvény        3.
+
+
+conftest file
+-------------------------------------------
+import pytest
+
+@pytest.mark.fixture(scope = "class")
+def fixture1():
+    #ez a fixture
+    <előtte lévő utastások>     1.
+    yield
+    <utána lévő utasítások>      4.
