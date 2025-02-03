@@ -1,0 +1,17 @@
+#minden egy fileban
+----------------------------------------
+import pytest
+
+
+@pytest.mark.fixture()
+def fixture1():
+    #ez a fixture
+    <előtte lévő utastások>     1.
+    yield
+    <utána lévő utasítások>      3.
+
+
+
+def test_function1(fixture1):
+    #ez a teszt függvény        2.
+-------------------------------------------
