@@ -2,16 +2,17 @@
 # dictionary szintek
 # 1: 3 key-value: [S]:2 or 3 or 4 values, [F] 1-40 fields, [H] 2 or 3 or 4 houses
 # values: diectionaries:
-# [S]: keys:[A]...[D], values: int count of pieces in start per player
-# [F]: keys:[1]...[40], values:  tuple:(piece on field: 'A3', special property of field, True-False or int 0,1,2 etc.)
-# [H]: keys: [A]...[D], values: tuple: (piece on field: 3)
+# [S]: keys:[A]...[D], values: int count of piece in start per player
+# [F]: keys:[1]...[40], values:  tuple:(posKey on field: 'A3', special property of field, True-False or int 0,1,2 etc.)
+# [H]: keys: [A]...[D], values: tuple: (posKey on field: 3)
 
 
 import _global
+from players import Players
 
 
 class Table:
-    """ Table with 3 players, startposition:
+    """ Table with 3 player, startposition:
     {'S': {'A': 4, 'B': 4, 'C': 4}, 'F': {1: ('', 0), 2: ('', 0), 3: ('', 0), 4: ('', 0), 5: ('', 0), 6: ('', 0), 7: ('', 0), 8: ('', 0), 9: ('', 0), 10: ('', 0), 11: ('', 0), 12: ('', 0), 13: ('', 0), 14: ('', 0), 15: ('', 0), 16: ('', 0), 17: ('', 0), 18: ('', 0), 19: ('', 0), 20: ('', 0), 21: ('', 0), 22: ('', 0), 23: ('', 0), 24: ('', 0), 25: ('', 0), 26: ('', 0), 27: ('', 0), 28: ('', 0), 29: ('', 0), 30: ('', 0), 31: ('', 0), 32: ('', 0), 33: ('', 0), 34: ('', 0), 35: ('', 0), 36: ('', 0), 37: ('', 0), 38: ('', 0), 39: ('', 0), 40: ('', 0)}, 'H': {'A': {1: (0,), 2: (0,), 3: (0,), 4: (0,)}, 'B': {1: (0,), 2: (0,), 3: (0,), 4: (0,)}, 'C': {1: (0,), 2: (0,), 3: (0,), 4: (0,)}}}
 
     """
@@ -33,15 +34,20 @@ class Table:
 
         for i in range(_global.playercount):
             keyH_P = {}
-            keyS[chr(i + 65)] = 4  # A-D, acc. to count players
+            keyS[chr(i + 65)] = 4  # A-D, acc. to count player
             for j in range(4):
                 keyH_P[j + 1] = (0,)
             keyH[chr(i + 65)] = keyH_P
         self.table["S"] = keyS
         for i in range(40):
-            keyF[i + 1] = ('', 0)
+            #special fields, knock off not possible, every first field
+            if i % 10 == 0:
+                keyF[i + 1] = ( '', True)
+            else:
+                keyF[i + 1] = ('', False)
         self.table["F"] = keyF
         self.table["H"] = keyH
+
 
     def tablePrintout(self):
         printout = "State of table\n"
@@ -78,19 +84,49 @@ class Table:
         # print(self.table["S"], "\n", self.table["F"], "\n", self.table["H"])
         print(self.table)
 
-    def movePiece(self, player, piece, count):
-        self.table
-
-    def checkMoveOwnpiece(self):
+    def movePiece(self, player, piece, steps):
+        # players.player['A'].piece['p2'].posKey['S']
         pass
+        print(players.player['A'].getPos(3))
 
-    def checkMoveOtherPiece(self):
-        pass
+    """
+    lépés folyamata:
+    kiválasztott bábu helyének lekérése a players.player['A'].piece['p2'].posKey['S'] vagy ['F'] ből
+    Ha S-ben van, és 6-ot dobott, akkor saját 1-re kerül. Saját 1-et szintén a playerből lekérdezni, majd ... tisztázni...
+    
+    Ha F-ben van, akkor megvizsgálni, hogy az összeg > 40. Ha nem, simán lépés, ha igen, ház vizsgálat. 
+    """
+    # def checkMoveOwnpiece(self):
+    #     pass
+    #
+    # def checkMoveOtherPiece(self):
+    #     pass
 
 
 # testing
 table = Table()
+players = Players()
 #
-# table.tablePrintout()
-table.fullPrintout()
+players.player['A'].piece['p1'].posKey['S'] = True
+players.player['A'].piece['p2'].posKey['S'] = True
+players.player['A'].piece['p3'].posKey['S'] = False
+players.player['A'].piece['p4'].posKey['S']= False
+players.player['A'].piece['p3'].posKey['F'] = 38
+#
+# players.player['A'].piece['p1'].posKey['H'] = 1
+# players.player['A'].piece['p2'].posKey['H'] = 2
+# players.player['A'].piece['p3'].posKey['H'] = 3
+# players.player['A'].piece['p4'].posKey['H']= 4
+
+table.tablePrintout()
+
+
+
+
+
+table.movePiece('A','3',5)
+
+# table.fullPrintout()
+
+
 # table.fullPrintout()

@@ -3,30 +3,30 @@ import _global
 
 class Players:
     def __init__(self):
-        self.players = {}
+        self.player = {}
         for i in range(_global.playercount):
-            self.players[chr(i + 65)] = Player(i * 10)
+            self.player[chr(i + 65)] = Player(i * 10)
 
     def playersPrintout(self):
         for i in range(_global.playercount):
             for j in range(4):
-                print(self.players[chr(i + 65)].pieces['p' + str(j + 1)].piece['S'],
-                      (self.players[chr(i + 65)].pieces['p' + str(j + 1)].piece['F']),
-                      (self.players[chr(i + 65)].pieces['p' + str(j + 1)].piece['H']))
+                print(self.player[chr(i + 65)].piece['p' + str(j + 1)].posKey['S'],
+                      (self.player[chr(i + 65)].piece['p' + str(j + 1)].posKey['F']),
+                      (self.player[chr(i + 65)].piece['p' + str(j + 1)].posKey['H']))
 
     def fullPrintout(self):
-        # print(self.players['B'].pieces['p1'].piece)
-        print(self.players)
+        # print(self.player['B'].piece['p1'].posKey)
+        print(self.player)
 
 
 class Player:
     def __init__(self, offset):
-        self.pieces = {}
+        self.piece = {}
         self.name = ""
         self.ownCoordOnTableCs = {}
         self.tableCoordOnOwnCs = {}
         for i in range(4):
-            self.pieces['p' + str(i + 1)] = Pieces()
+            self.piece['p' + str(i + 1)] = Pieces()
         for i in range(40):
             # print (i+1,"  ",(40 + offset + i ) % 40+1)
             self.ownCoordOnTableCs[i + 1] = (40 + offset + i) % 40 + 1
@@ -36,58 +36,70 @@ class Player:
         return self.ownCoordOnTableCs[tableField]
 
     def tableCoordsOnOwnCs(self, playerField):
-        return self.tableCoordOnOwnCs(playerField)
+        return self.tableCoordOnOwnCs[playerField]
 
-    # def playerMoves(self, piece, count):
-    #     # players.players['A'].pieces['p3'].piece['H']
-    #     target = self.pieces[piece].piece['F'] + count
+    # def playerMoves(self, posKey, count):
+    #     # player.player['A'].piece['p3'].posKey['H']
+    #     target = self.piece[posKey].posKey['F'] + count
     #     if target > 40:
     #         pass# this.checkHouseFilling(target) #returns 1-4 for possible housefield or 0 if
     #
     #         print(self.houseFilling(target))
     #     else:
-    #         self.pieces[piece].piece['F'] = target
+    #         self.piece[posKey].posKey['F'] = target
 
     def checkPlayerWon(self):
         playerWon = True
         for i in range(4):
-            if self.pieces['p' + str(i + 1)].piece['H'] == 0:
+            if self.piece['p' + str(i + 1)].posKey['H'] == 0:
                 playerWon = False
         return playerWon
 
     def checkPieceInStart(self, piece) -> bool:
-        return self.pieces[piece].piece['S']
+        return self.piece[piece].posKey['S']
 
     def startPiece(self, count):
         pass
 
+    def getPos(self, piece) -> ():
+        retVal = ()
+        sPos = self.piece[('p' + piece)].posKey['S']
+        hPos = self.piece[('p' + piece)].posKey['H']
+        fPos = self.piece[('p' + piece)].posKey['F']
+        if hPos != 0:
+            retVal = ('h', hPos)
+        elif fPos != 0:
+            retVal = ('f', fPos)
+        else:
+            retVal = ('s',)
+
+
 class Pieces:
     def __init__(self):
-        self.piece = {}
-        self.piece['S'] = True
-        self.piece['F'] = 0
-        self.piece['H'] = 0
+        self.posKey = {}
+        self.posKey['S'] = True
+        self.posKey['F'] = 0
+        self.posKey['H'] = 0
 
-
-# testing
-players = Players()
-
-# set player to winner
-players.players['A'].pieces['p1'].piece['S'] = True
-players.players['A'].pieces['p2'].piece['S'] = True
-players.players['A'].pieces['p3'].piece['S'] = False
-# players.players['A'].pieces['p4'].piece['S']= False
-players.players['A'].pieces['p3'].piece['F'] = 38
-
-# players.players['A'].pieces['p1'].piece['H'] = 1
-# players.players['A'].pieces['p2'].piece['H'] = 2
-# players.players['A'].pieces['p3'].piece['H'] = 3
-# players.players['A'].pieces['p4'].piece['H']= 4
-# players.playersPrintout()
-
-# print(players.players['A'].playerWon())
-# move a table class-ban és csak az eredmény jön át ide
-# players.players['A'].playerMoves('p3',3)
-
-# players.playersPrintout()
-players.fullPrintout()
+# # testing
+# players = Players()
+#
+# # set player to winner
+# players.player['A'].piece['p1'].posKey['S'] = True
+# players.player['A'].piece['p2'].posKey['S'] = True
+# players.player['A'].piece['p3'].posKey['S'] = False
+# # player.player['A'].piece['p4'].posKey['S']= False
+# players.player['A'].piece['p3'].posKey['F'] = 38
+#
+# players.player['A'].piece['p1'].posKey['H'] = 1
+# players.player['A'].piece['p2'].posKey['H'] = 2
+# players.player['A'].piece['p3'].posKey['H'] = 3
+# players.player['A'].piece['p4'].posKey['H']= 4
+# # player.playersPrintout()
+#
+# print(players.player['A'].checkPlayerWon())
+# # move a table class-ban és csak az eredmény jön át ide
+# # player.player['A'].playerMoves('p3',3)
+#
+# # player.playersPrintout()
+# players.fullPrintout()

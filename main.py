@@ -8,7 +8,7 @@ from players import Player
 def inputPlayercount() -> None:
 	playercountOk = False
 	while not playercountOk:
-		val = input("Number of players (2-4, q = quit ):")
+		val = input("Number of player (2-4, q = quit ):")
 		try:
 			val = int(val)
 			if val > 1 and val < 5:
@@ -40,8 +40,8 @@ def keyboardInput(keys: tuple) -> str:
 					break
 	return returnKey
 #start
-print("\tWelcome to Ludo game.\n\tHow many players will play?")
-# Number of players:
+print("\tWelcome to Ludo game.\n\tHow many player will play?")
+# Number of player:
 
 #inputPlayercount()			# in release
 _global.playercount = 4		# development step
@@ -57,13 +57,13 @@ table.tablePrintout()	# test step
 # playerek létrehozása _global
 for i in range(_global.playercount):		# in release
 	_global.players[chr(i + 65)]=(Player(chr(i + 65)))		# in release
-	_global.players[chr(i + 65)].name = input("Enter the %s. players name:" % (i+1))
-	#print(_global.players[chr(i + 65)].name)	# test step
-# print(_global.players)				# test steps
-# print(_global.players["A"].player)	# test steps
-# print(_global.players["B"].player)
-# print(_global.players["C"].player)
-# print(_global.players["D"].player)
+	_global.players[chr(i + 65)].name = input("Enter the %s. player name:" % (i+1))
+	#print(_global.player[chr(i + 65)].name)	# test step
+# print(_global.player)				# test steps
+# print(_global.player["A"].player)	# test steps
+# print(_global.player["B"].player)
+# print(_global.player["C"].player)
+# print(_global.player["D"].player)
 
 #play loops
 nextTurn = True

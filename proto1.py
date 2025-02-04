@@ -5,7 +5,7 @@ class Game:
         # self.main()
         self.playerCount = 0
         self.players = {}
-        """players dict (key:Betűjele, value:neve )"""
+        """player dict (key:Betűjele, value:neve )"""
 
         valasztas = self.fomenu()
         print("valasztas: ", valasztas, type(valasztas))
