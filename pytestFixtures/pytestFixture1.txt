@@ -1,7 +1,6 @@
 #minden egy fileban
 ----------------------------------------
 import pytest
------------------------------------------
 
 @pytest.mark.fixture()
 def fixture1():
