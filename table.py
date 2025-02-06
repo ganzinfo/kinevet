@@ -40,7 +40,7 @@ class Table:
             keyH[chr(i + 65)] = keyH_P
         self.table["S"] = keyS
         for i in range(40):
-            #special fields, knock off not possible, every first field
+            #special fields, knock off not possible, every first field per player
             if i % 10 == 0:
                 keyF[i + 1] = ( '', True)
             else:

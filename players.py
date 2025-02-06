@@ -62,34 +62,38 @@ class Player:
         pass
 
     def getPos(self, piece) -> ():
-        retVal = ()
-        sPos = self.piece[('p' + piece)].posKey['S']
-        hPos = self.piece[('p' + piece)].posKey['H']
-        fPos = self.piece[('p' + piece)].posKey['F']
-        if hPos != 0:
-            retVal = ('h', hPos)
-        elif fPos != 0:
-            retVal = ('f', fPos)
-        else:
-            retVal = ('s',)
+        piece = 'p' + str(piece)
+        pos=self.piece[piece].posKey['pos']
+        return (pos, self.piece[piece].posKey[pos])
+        # sPos = self.piece[('p' + piece)].posKey['S']
+        # hPos = self.piece[('p' + piece)].posKey['H']
+        # fPos = self.piece[('p' + piece)].posKey['F']
+        # if hPos != 0:
+        #     retVal = ('h', hPos)
+        # elif fPos != 0:
+        #     retVal = ('f', fPos)
+        # else:
+        #     retVal = ('s',)
 
 
 class Pieces:
     def __init__(self):
         self.posKey = {}
+        self.posKey['pos'] = 'S'
         self.posKey['S'] = True
         self.posKey['F'] = 0
         self.posKey['H'] = 0
 
 # # testing
-# players = Players()
+players = Players()
 #
 # # set player to winner
 # players.player['A'].piece['p1'].posKey['S'] = True
 # players.player['A'].piece['p2'].posKey['S'] = True
-# players.player['A'].piece['p3'].posKey['S'] = False
+players.player['A'].piece['p3'].posKey['S'] = False
 # # player.player['A'].piece['p4'].posKey['S']= False
-# players.player['A'].piece['p3'].posKey['F'] = 38
+players.player['A'].piece['p3'].posKey['F'] = 38
+players.player['A'].piece['p3'].posKey['pos'] = 'F'
 #
 # players.player['A'].piece['p1'].posKey['H'] = 1
 # players.player['A'].piece['p2'].posKey['H'] = 2
@@ -101,5 +105,7 @@ class Pieces:
 # # move a table class-ban és csak az eredmény jön át ide
 # # player.player['A'].playerMoves('p3',3)
 #
-# # player.playersPrintout()
+players.playersPrintout()
 # players.fullPrintout()
+
+print(players.player['A'].getPos(3))
