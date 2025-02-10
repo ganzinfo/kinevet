@@ -1,33 +1,21 @@
 from pynput.keyboard import Key, Listener
 
-def on_press(key):
-    pass
-    # print('{0} pressed'.format(
-    #     key))
-
-
-def on_release(key):
-#hasattr(key,'char')
-    if key.char == 'q':
-        print('q')
-    elif key.char == 'c':
-        print('c')
-
-    print('{0} release'.format(
-        key))
-
-    if key == Key.esc:
-        # Stop listener
-        return False
-
-def listen(keys):# Collect events until released
-    keys = keys
-    with Listener(
-            on_press=on_press,
-            on_release=on_release) as listener:
+def keyListener(chars):
+    global charsDict
+    charsDict = chars
+    with Listener(on_release=on_release) as listener:
         listener.join()
 
+def on_release(key):
+    try:
+        if key.vk in charsDict:
+            print(charsDict[key.vk])
+            return charsDict[key.vk]
+        else:
+            pass
+    except:
+        pass
 
-args=('1','2','3')
 
-listen(args)
+global charsDict
+# keyListener(charsDict)
