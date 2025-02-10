@@ -3,7 +3,7 @@
 import pytest
 -----------------------------------------
 
-@pytest.mark.fixture()
+@pytest.fixture()
 def fixture1():
     #ez a fixture
     <előtte lévő utastások>     1. 4.

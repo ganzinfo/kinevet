@@ -3,7 +3,7 @@ test függvény file:
 -------------------------------------------
 import pytest
 
-@pytest.mark.usefixtures("fixture")
+@pytest.usefixtures("fixture")
 class testclass:
 
     def test_function1(self):
@@ -17,7 +17,7 @@ conftest file
 -------------------------------------------
 import pytest
 
-@pytest.mark.fixture(scope = "class")
+@pytest.fixture(scope = "class")
 def fixture1():
     #ez a fixture
     <előtte lévő utastások>     1.
