@@ -1,0 +1,21 @@
+3 players objects
+
+players = {Players} <__main__.Players object at 0x00000180702978C0>
+
+ players = {dict: 3} {'A': <__main__.Player object at 0x00000180703D0830>, 'B': <__main__.Player object at 0x000001807034A350>, 'C': <__main__.Player object at 0x000001807034A490>}
+
+  'A' = {Player} <__main__.Player object at 0x00000180703D0830>
+   ownCoordOnTableCs = {dict: 40} {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16, 17: 17, 18: 18, 19: 19, 20: 20, 21: 21, 22: 22, 23: 23, 24: 24, 25: 25, 26: 26, 27: 27, 28: 28, 29: 29, 30: 30, 31: 31, 32: 32, 33: 33, 34: 34, 35: 35, 36: 36, 37: 37, 38: 38, 39: 39, 40: 40}
+   pieces = {dict: 4} {'p1': <__main__.Pieces object at 0x00000180703D01A0>, 'p2': <__main__.Pieces object at 0x000001807034A0D0>, 'p3': <__main__.Pieces object at 0x000001807034A210>, 'p4': <__main__.Pieces object at 0x000001807038CC30>}
+    'p1' = {Pieces} <__main__.Pieces object at 0x00000180703D01A0>
+     piece = {dict: 3} {'F': 0, 'H': 0, 'S': True}
+    'p2' = {Pieces} <__main__.Pieces object at 0x000001807034A0D0>
+     piece = {dict: 3} {'F': 0, 'H': 0, 'S': True}
+    'p3' = {Pieces} <__main__.Pieces object at 0x000001807034A210>
+     piece = {dict: 3} {'F': 0, 'H': 0, 'S': True}
+    'p4' = {Pieces} <__main__.Pieces object at 0x000001807038CC30>
+     piece = {dict: 3} {'F': 0, 'H': 0, 'S': True}
+    __len__ = {int} 4
+   tableCoordOnOwnCs = {dict: 40} {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16, 17: 17, 18: 18, 19: 19, 20: 20, 21: 21, 22: 22, 23: 23, 24: 24, 25: 25, 26: 26, 27: 27, 28: 28, 29: 29, 30: 30, 31: 31, 32: 32, 33: 33, 34: 34, 35: 35, 36: 36, 37: 37, 38: 38, 39: 39, 40: 40}
+  'B' = {Player} <__main__.Player object at 0x000001807034A350>
+  'C' = {Player} <__main__.Player object at 0x000001807034A490>
