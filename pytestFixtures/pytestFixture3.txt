@@ -4,7 +4,7 @@ test függvény file:
 import pytest
 
 @pytest.mark.usefixtures("fixture1")
-class testclass:
+class Testclass:
 
     def test_function1(self):
         #ez a teszt függvény        2.
