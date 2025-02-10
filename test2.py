@@ -1,21 +1,45 @@
 from pynput.keyboard import Key, Listener
 
-def on_press(key):
-    print('{0} pressed'.format(
-        key))
+# def on_press(key):
+#     print('{0} pressed'.format(
+#         key))
+
+
+
+def keyListener(charsDict):
+
+    with Listener(on_release=on_release) as listener:
+        listener.join()
 
 def on_release(key):
-    print('{0} release'.format(
-        key))
-    if key == Key.esc:
-        # Stop listener
-        return False
+    try:
+        if key.vk in charsDict:
+            print(charsDict[key.vk])
+        else:
+            print("none")
+        # if key == Key.esc:
+            # Stop listener
+    except:
+        pass
+    # return False
+
+charsDict = {48:'0',49:'1',50:'2',51:'3',52:'4',96:'0',97:'1',98:'2',99:'3',100:'4',81:'q'}
+keyListener(charsDict)
+# def on_release(key):
+#     print('{0} release'.format(
+#         key))
+#     if key == Key.esc:
+#         # Stop listener
+#         return False
 
 # Collect events until released
-with Listener(
-        on_press=on_press,
-        on_release=on_release) as listener:
-    listener.join()
+
+
+
+# with Listener(
+#         on_press=on_press,
+#         on_release=on_release) as listener:
+#     listener.join()
 
 # import sys
 #
