@@ -9,7 +9,7 @@ def keyListener(chars):
 def on_release(key):
     try:
         if key.vk in charsDict:
-            print(charsDict[key.vk])
+            # print(charsDict[key.vk])
             return charsDict[key.vk]
         else:
             pass
