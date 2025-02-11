@@ -4,7 +4,7 @@ import sys
 import _global
 from table import Table
 from players import Player
-import KeyListener
+
 
 def inputPlayercount() -> None:
 	playercountOk = False
@@ -42,7 +42,7 @@ table.tablePrintout()	# test step
 # playerek létrehozása _global
 for i in range(_global.playercount):		# in release
 	_global.players[chr(i + 65)]=(Player(chr(i + 65)))		# in release
-	_global.players[chr(i + 65)].name = input("Enter the %s. player name:" % (i+1))
+	_global.players[chr(i + 65)].name = input("Enter the %s. player name:" % (i + 1))
 	#print(_global.player[chr(i + 65)].name)	# test step
 # print(_global.player)				# test steps
 # print(_global.player["A"].player)	# test steps

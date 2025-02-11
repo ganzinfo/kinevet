@@ -11,4 +11,4 @@ import TDD_houseCheck_2
 ])
 def test_houseCheck(actPos, diceRoll, houseState,expected):
 
-    assert(TDD_houseCheck_2.houseCheck(actPos, diceRoll, houseState) ==expected)
+    assert(TDD_houseCheck_2.houseCheck(actPos, diceRoll, houseState) == expected)
