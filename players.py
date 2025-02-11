@@ -83,12 +83,25 @@ class Pieces:
         self.posKey['S'] = True
         self.posKey['F'] = 0
         self.posKey['H'] = 0
+
     def movePiece(self, steps):
-        pass
-        #TODO Adatszerkezetet megváltoztatni objektummezőkké
+        match self.posKey["pos"]:
+            case 'S':
+                pass
+            case 'F':
+                pass
+            case 'H':
+                pass
+            # ez valszeg nem lesz szükséges
+
+
     """Csak a mozgást valósítja meg. Semmi vizsgálatot nem végez.
     Mozgás: -Startból steps a játékmezőkre
             -ha 40-nél nagyobb (saját KR), akkor egy ház töltő függvény jön"""
+
+    def findPiece(self):
+        pass
+
 
     def fillHouse(self,steps):
         pass
