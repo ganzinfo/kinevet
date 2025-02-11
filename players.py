@@ -87,9 +87,11 @@ class Pieces:
     def movePiece(self, steps):
         match self.posKey["pos"]:
             case 'S':
-                pass
+                self.posKey['S'] = False
+                self.posKey['F'] += steps
             case 'F':
-                pass
+                if self.posKey['F'] + steps > 40:
+
             case 'H':
                 pass
             # ez valszeg nem lesz szükséges
