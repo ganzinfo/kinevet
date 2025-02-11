@@ -3,7 +3,7 @@ import sys
 #import keyboard
 import _global
 from table import Table
-from players import Player
+from players import Players
 
 
 def inputPlayercount() -> None:
@@ -20,16 +20,22 @@ def inputPlayercount() -> None:
 				print("Quit game... Bye.")
 				sys.exit()
 
+players = Players()
+
+def inputPlayersNames():
+	for i in range(_global.playercount):
+		pass
 #start
 print("\tWelcome to Ludo game.\n\tHow many player will play?")
-# Number of player:
+# Number of players:
+inputPlayercount()			# in release
+# _global.playercount = 4		# development step
 
-#inputPlayercount()			# in release
-_global.playercount = 4		# development step
 
 #print (_global.playercount)
 #Initializing the game
 #print("Initializing...")
+
 
 print(_global.keysToListen["selectPiece"])
 

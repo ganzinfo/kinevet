@@ -83,29 +83,38 @@ class Pieces:
         self.posKey['S'] = True
         self.posKey['F'] = 0
         self.posKey['H'] = 0
+    def movePiece(self, steps):
+        pass
+        #TODO Adatszerkezetet megváltoztatni objektummezőkké
+    """Csak a mozgást valósítja meg. Semmi vizsgálatot nem végez.
+    Mozgás: -Startból steps a játékmezőkre
+            -ha 40-nél nagyobb (saját KR), akkor egy ház töltő függvény jön"""
 
-# # testing
-players = Players()
-#
-# # set player to winner
-# players.player['A'].piece['p1'].posKey['S'] = True
-# players.player['A'].piece['p2'].posKey['S'] = True
-players.player['A'].piece['p3'].posKey['S'] = False
-# # player.player['A'].piece['p4'].posKey['S']= False
-players.player['A'].piece['p3'].posKey['F'] = 38
-players.player['A'].piece['p3'].posKey['pos'] = 'F'
-#
-# players.player['A'].piece['p1'].posKey['H'] = 1
-# players.player['A'].piece['p2'].posKey['H'] = 2
-# players.player['A'].piece['p3'].posKey['H'] = 3
-# players.player['A'].piece['p4'].posKey['H']= 4
-# # player.playersPrintout()
-#
-# print(players.player['A'].checkPlayerWon())
-# # move a table class-ban és csak az eredmény jön át ide
-# # player.player['A'].playerMoves('p3',3)
-#
-players.playersPrintout()
-# players.fullPrintout()
+    def fillHouse(self,steps):
+        pass
 
-print(players.player['A'].getPos(3))
+# # # testing
+# players = Players()
+# #
+# # # set player to winner
+# # players.player['A'].piece['p1'].posKey['S'] = True
+# # players.player['A'].piece['p2'].posKey['S'] = True
+# players.player['A'].piece['p3'].posKey['S'] = False
+# # # player.player['A'].piece['p4'].posKey['S']= False
+# players.player['A'].piece['p3'].posKey['F'] = 38
+# players.player['A'].piece['p3'].posKey['pos'] = 'F'
+# #
+# # players.player['A'].piece['p1'].posKey['H'] = 1
+# # players.player['A'].piece['p2'].posKey['H'] = 2
+# # players.player['A'].piece['p3'].posKey['H'] = 3
+# # players.player['A'].piece['p4'].posKey['H']= 4
+# # # player.playersPrintout()
+# #
+# # print(players.player['A'].checkPlayerWon())
+# # # move a table class-ban és csak az eredmény jön át ide
+# # # player.player['A'].playerMoves('p3',3)
+# #
+# players.playersPrintout()
+# # players.fullPrintout()
+#
+# print(players.player['A'].getPos(3))

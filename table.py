@@ -1,15 +1,5 @@
-# impementation of class Table
-# dictionary szintek
-# 1: 3 key-value: [S]:2 or 3 or 4 values, [F] 1-40 fields, [H] 2 or 3 or 4 houses
-# values: diectionaries:
-# [S]: keys:[A]...[D], values: int count of piece in start per player
-# [F]: keys:[1]...[40], values:  tuple:(posKey on field: 'A3', special property of field, True-False or int 0,1,2 etc.)
-# [H]: keys: [A]...[D], values: tuple: (posKey on field: 3)
-
-
 import _global
 from players import Players
-
 
 class Table:
     """ Table with 3 player, startposition:
@@ -103,30 +93,30 @@ class Table:
     #     pass
 
 
-# testing
-table = Table()
-players = Players()
+# # testing
+# table = Table()
+# players = Players()
+# #
+# players.player['A'].piece['p1'].posKey['S'] = True
+# players.player['A'].piece['p2'].posKey['S'] = True
+# players.player['A'].piece['p3'].posKey['S'] = False
+# players.player['A'].piece['p4'].posKey['S']= False
+# players.player['A'].piece['p3'].posKey['F'] = 38
+# #
+# # players.player['A'].piece['p1'].posKey['H'] = 1
+# # players.player['A'].piece['p2'].posKey['H'] = 2
+# # players.player['A'].piece['p3'].posKey['H'] = 3
+# # players.player['A'].piece['p4'].posKey['H']= 4
 #
-players.player['A'].piece['p1'].posKey['S'] = True
-players.player['A'].piece['p2'].posKey['S'] = True
-players.player['A'].piece['p3'].posKey['S'] = False
-players.player['A'].piece['p4'].posKey['S']= False
-players.player['A'].piece['p3'].posKey['F'] = 38
+# table.tablePrintout()
 #
-# players.player['A'].piece['p1'].posKey['H'] = 1
-# players.player['A'].piece['p2'].posKey['H'] = 2
-# players.player['A'].piece['p3'].posKey['H'] = 3
-# players.player['A'].piece['p4'].posKey['H']= 4
-
-table.tablePrintout()
-
-
-
-
-
-table.movePiece('A','3',5)
-
-# table.fullPrintout()
-
-
-# table.fullPrintout()
+#
+#
+#
+#
+# table.movePiece('A','3',5)
+#
+# # table.fullPrintout()
+#
+#
+# # table.fullPrintout()
