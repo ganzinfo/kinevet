@@ -1,6 +1,7 @@
 import pytest
 
-@pytest.fixture(scope="class")
+
+@pytest.fixture(scope = "class")
 def fixture1():
     print("Előtte lefut...fixture1")
     yield
